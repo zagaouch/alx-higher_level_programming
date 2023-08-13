@@ -6,4 +6,3 @@ if __name__ == "__main__":
     for word in words:
         if (word[:2] != '__'):
             print(f"{word:s}")
-            

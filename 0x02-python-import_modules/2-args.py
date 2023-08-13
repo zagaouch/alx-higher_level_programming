@@ -13,4 +13,3 @@ if __name__ == '__main__':
 
     for i in range(word):
         print('{}: {}'.format(i + 1, words[i]))
-        

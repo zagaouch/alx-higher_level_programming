@@ -8,4 +8,3 @@ if __name__ == '__main__':
     for x in range(num_count):
         sum = sum + int(num[x])
     print(sum)
-    
