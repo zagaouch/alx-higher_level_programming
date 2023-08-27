@@ -2,4 +2,3 @@
 for char_code in range(97, 123):
     if char_code != 112 and char_code != 113:
         print("{:s}".format(chr(char_code)), end='')
-
