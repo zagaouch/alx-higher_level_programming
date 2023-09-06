@@ -1,0 +1,32 @@
+# tests/add_integer_tests.txt
+
+"""
+Test cases for add_integer function.
+
+>>> from my_module import add_integer
+
+# Test case 1: Adding two integers
+>>> add_integer(5, 3)
+8
+
+# Test case 2: Adding a float and an integer (casting to int)
+>>> add_integer(3.8, 2)
+5
+
+# Test case 3: Adding two floats (casting both to int)
+>>> add_integer(2.2, 3.3)
+5
+
+# Test case 4: Adding a string and an integer (should raise TypeError)
+>>> add_integer("5", 3)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer or b must be an integer
+"""
+
+# To run the tests, use the command specified in the instructions:
+# python3 -m doctest ./tests/add_integer_tests.txt
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("./tests/add_integer_tests.txt")
