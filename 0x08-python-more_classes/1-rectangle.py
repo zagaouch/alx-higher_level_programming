@@ -1,12 +1,16 @@
 #!/usr/bin/python3$
 
-""" An class rectangle"""
+""" 
+An class rectangle
+"""
 
 
 class Rectangle:
-    """ define an class"""
+    """
+    define an class
+    """
 
-    
+
     def __init__(self, width=0, height=0):
         """ define an constructor"""
         self.width = width
