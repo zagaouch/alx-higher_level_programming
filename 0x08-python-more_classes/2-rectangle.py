@@ -42,12 +42,10 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-    @property
     def area(self):
         """retrives the private instance area"""
         return self.__width * self.__height
 
-    @property
     def perimeter(self):
         """retrives the private instance perimeter"""
         if self.__width == 0 or self.__height == 0:
