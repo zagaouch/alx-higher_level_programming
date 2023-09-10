@@ -52,3 +52,26 @@ class Rectangle:
             return 0
         else:
             return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        """print rectangle shape"""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        else:
+            rectangle_str = ""
+            for i in range(self.__height):
+                for j in range(self.__width):
+                    if j == self.__width - 1:
+                        rectangle_str += "#"
+                    else:
+                        rectangle_str += "#"
+                if i != self.__height - 1:
+                    rectangle_str += "\n"
+            return rectangle_str
+
+    def __repr__(self):
+        """Return a string of an object of the rectangle"""
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+    def __del__(self):
+        """delet object of the rectangle"""
+        print("Bye rectangle...")
