@@ -91,6 +91,4 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """creates a square with a size"""
-        if size < 0:
-            raise ValueError("size must be greater than 0")
         return cls(size, size)
