@@ -57,6 +57,7 @@ class Rectangle:
             return 2 * (self.__width + self.__height)
 
     def __str__(self):
+        """print rectangle shape"""
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
@@ -66,7 +67,7 @@ class Rectangle:
                     if j == self.__width - 1:
                         rectangle_str += str(Rectangle.print_symbol)
                     else:
-                        rectangle_str += str(Rectangle.print_symbol) + " "  # Add a space here
+                        rectangle_str += str(Rectangle.print_symbol) + " "
                 if i != self.__height - 1:
                     rectangle_str += "\n"
             return rectangle_str
