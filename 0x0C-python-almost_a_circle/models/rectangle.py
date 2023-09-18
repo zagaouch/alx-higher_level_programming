@@ -1,35 +1,66 @@
 #!/usr/bin/python3
-from .base import Base
 """a rectangle class that inherits from a class Base"""
 
 
-class Rectanle(Base):
-    """a rectangle class that inherits from a class Base"""
+import json
+from models.base import Base
+
+
+class Rectangle(Base):
+    """defines a rectangle class"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
-        """a rectangle class that inherits from a class Base"""
+        """initialize width, height of Rectangle"""
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
-    def get_width(self):
-        return self.width
+    @property
+    def width(self):
+        return self.__width
 
-    def get_height(self):
-        return self.height
+    @width.setter
+    def width(self, value):
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
 
-    def get_x(self):
-        return self.x
+    @property
+    def height(self):
+        return self.__height
 
-    def get_y(self):
-        return self.y
+    @height.setter
+    def height(self, value):
+        if type(value) != int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
 
-    def set_width(self, width):
-        self.width = width
+    @property
+    def x(self):
+        return self.__x
 
-    def set_height(self, height):
-        self.height = height
-    def set_x(self, x):
-        self.x = x
-    def set_y(self, y):
-        self.y = y
+    @x.setter
+    def x(self, value):
+        if type(value) != int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
+
+    @property
+    def y(self):
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        if type(value) != int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
