@@ -23,7 +23,6 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-
     @property
     def width(self):
         """Getter for the width attribute."""
