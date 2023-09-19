@@ -84,13 +84,9 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        for i in range(self.__height):
-            print("#" * self.__width)
-
-    def __str__(self):
-        """Returns a custom string representation of the Rectangle instance."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                                                       self.__x,
-                                                       self.__y,
-                                                       self.__width,
-                                                       self.__height)
+        """prints the dimension of class"""
+        [print() for v in range(self.y)]
+        for h in range(self.__height):
+            [print(" ", end="") for h in range(self.x)]
+            [print("#", end="") for w in range(self.width)]
+            print()
