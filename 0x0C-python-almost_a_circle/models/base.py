@@ -3,7 +3,7 @@
 
 
 import json
-
+import csv
 
 class Base:
     """defines a class base that has a private attribute"""
@@ -59,4 +59,36 @@ class Base:
                 lst = cls.from_json_string(f.read())
                 return [cls.create(**d) for d in lst]
         except Exception:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + ".csv"
+
+        with open(filename, "w", newline="") as csvfile:
+            writer = csv.writer(csvfile)
+            if list_objs:
+                for obj in list_objs:
+                    if cls.__name__ == "Rectangle":
+                        data = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                    elif cls.__name__ == "Square":
+                        data = [obj.id, obj.size, obj.x, obj.y]
+                    writer.writerow(data)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = cls.__name__ + ".csv"
+        objs = []
+
+        try:
+            with open(filename, "r") as csvfile:
+                reader = csv.reader(csvfile)
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                    elif cls.__name__ == "Square":
+                        obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
+                    objs.append(obj)
+            return objs
+        except FileNotFoundError:
             return []
