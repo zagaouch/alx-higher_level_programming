@@ -41,9 +41,22 @@ class Base:
         return json.loads(json_string)
 
     @classmethod
-    def load_from_file(cls):
-        filename = cls.__name__ + ".json"
+    def create(cls, **dictionary):
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                new = cls(1, 1)
+            else:
+                new = cls(1)
+            new.update(**dictionary)
+            return new
 
-        with open(filename, "r") as jsonfile:
-            json_string = jsonfile.read()
-            list_dicts = cls.from_json_string(json_string)
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        new_file = cls.__name__ + ".json"
+        try:
+            with open(new_file, "r") as f:
+                lst = cls.from_json_string(f.read())
+                return [cls.create(**d) for d in lst]
+        except Exception:
+            return []
