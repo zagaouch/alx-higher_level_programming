@@ -18,6 +18,9 @@ class Base:
 
     def to_json_string(list_dictionaries):
         """static method returns the string [] or JSON string """
-        if not list_dictionaries:
+        if list_dictionaries is None or len(list_dictionaries) < 1:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    def save_to_file(cls, list_objs):
+        """save data in file"""
