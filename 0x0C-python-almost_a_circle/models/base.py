@@ -7,7 +7,7 @@ import json
 
 class Base:
     """defines a class base that has a private attribute"""
-    __nb_objects = 0
+    __nb_objects = 1
 
     def __init__(self, id=None):
         if id is not None:
