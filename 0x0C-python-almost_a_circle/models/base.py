@@ -33,3 +33,17 @@ class Base:
                 list_dicts = [obj.to_dictionary() for obj in list_objs]
                 json_string = cls.to_json_string(list_dicts)
                 jsonfile.write(json_string)
+
+    def from_json_string(json_string):
+        """static method returns the string [] or JSON string """
+        if json_string is None or len(json_string) < 1:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+
+        with open(filename, "r") as jsonfile:
+            json_string = jsonfile.read()
+            list_dicts = cls.from_json_string(json_string)
