@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """creates a function Rectangle"""
 
-
+import json
 from models.rectangle import Rectangle
 
 
