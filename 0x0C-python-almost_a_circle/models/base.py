@@ -5,6 +5,7 @@
 import json
 import csv
 
+
 class Base:
     """defines a class base that has a private attribute"""
     __nb_objects = 0
@@ -85,9 +86,16 @@ class Base:
                 reader = csv.reader(csvfile)
                 for row in reader:
                     if cls.__name__ == "Rectangle":
-                        obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                        obj = cls(int(row[1]),
+                                  int(row[2]),
+                                  int(row[3]),
+                                  int(row[4]),
+                                  int(row[0]))
                     elif cls.__name__ == "Square":
-                        obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
+                        obj = cls(int(row[1]),
+                                  int(row[2]),
+                                  int(row[3]),
+                                  int(row[0]))
                     objs.append(obj)
             return objs
         except FileNotFoundError:
