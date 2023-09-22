@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module for Rectangle class."""
 from models.base import Base
-
+import json
 
 class Rectangle(Base):
     """defines a rectangle class"""
