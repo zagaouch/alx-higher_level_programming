@@ -1,11 +1,10 @@
 #!/usr/bin/node
-const argvs = process.argvs;
+const args = process.argv; // Array of arguments
 
-if (argvs === 0) {
+if (args.length <= 2) { // If there are no arguments
   console.log('No argument');
-}
-if (argvs === 1) {
+} else if (args.length === 3) { // If there is one argument
   console.log('Argument found');
-} else {
-  console.log('Argument found');
+} else { // If there are more than one argument
+  console.log('Arguments found');
 }
