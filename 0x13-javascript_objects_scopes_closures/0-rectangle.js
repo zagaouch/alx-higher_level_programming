@@ -1,5 +1,2 @@
 #!/usr/bin/node
-/* declare a empty class Rectangle */
-class Rectangle {
-    //empty class
-}
+module.exports = class Rectangle {}; // empty class declaration;
