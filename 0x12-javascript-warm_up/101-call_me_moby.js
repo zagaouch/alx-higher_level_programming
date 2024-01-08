@@ -1,5 +1,5 @@
 #!/usr/bin/node
-exports.callMeMoby = function (x, theFunction) { // This function calls a function passed 'x' times
+exports.callMeMoby = function (x, theFunction) {
   for (let i = 0; i < x; i++) {
     theFunction();
   }
