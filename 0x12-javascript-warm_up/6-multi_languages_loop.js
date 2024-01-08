@@ -1,5 +1,6 @@
 #!/usr/bin/node
-const arr = [];
-arr.push('C is fun','Python is cool','JavaScript is amazing');
+const languages = ["C is fun", "Python is cool", "JavaScript is amazing"];
 
- 
+for (const language of languages) {
+  console.log(language);
+}
