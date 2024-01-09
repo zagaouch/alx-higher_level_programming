@@ -1,13 +1,4 @@
 #!/usr/bin/node
 
-const file = require('./101-data.js');
-const dict = file.dict;
-const newDict = {};
-for (const key in dict) {
-  if (newDict[dict[key]]) {
-    newDict[dict[key]].push(key);
-  } else {
-    newDict[dict[key]] = [key];
-  }
-}
-console.log(newDict);
+const fs = require('fs');
+fs.writeFileSync(process.argv[4], fs.readFileSync(process.argv[2], 'utf-8') + fs.readFileSync(process.argv[3], 'utf-8'));
