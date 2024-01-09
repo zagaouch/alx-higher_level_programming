@@ -5,12 +5,18 @@ module.exports = class Square extends Rectangle {
   constructor (size) {
     super(size, size);
   }
-  charPrint(c){
-    if (c === undefined) {
-      c = 'X';
-    }
-    for(let i = 0; i < this.size; i++) {
-      console.log(c.repeat(this.size));
+
+  charPrint (c) {
+    for (let i = 0; i < this.height; i++) {
+      let line = '';
+      for (let j = 0; j < this.width; j++) {
+        if (c === undefined) {
+          line += 'X';
+        } else {
+          line += c;
+        }
+      }
+      console.log(line);
     }
   }
 };
