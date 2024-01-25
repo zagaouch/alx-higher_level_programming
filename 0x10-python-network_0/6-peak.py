@@ -1,11 +1,5 @@
 #!/usr/bin/python3
 def find_peak(list_of_integers):
-    """
-    Finds a peak in a list of unsorted integers.
-    Complexity:
-        O(log n)
-    """
-
     left, right = 0, len(list_of_integers) - 1
     while left < right:
         mid = (left + right) // 2
