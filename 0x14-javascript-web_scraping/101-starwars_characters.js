@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // do somthing
 
-const request = require('request');
+const request = require('axios');
 const id = process.argv[2];
 const url = `https://swapi-api.alx-tools.com/api/films/${id}`;
 
